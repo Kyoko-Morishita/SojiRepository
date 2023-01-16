@@ -13,7 +13,7 @@ public class Toban {
 	public static void main(String[] args) {
 		Scanner stdIn = new Scanner(System.in);
 		String[] student = { "1：Aさん", "2：Bさん", "3：Cさん", "4：Dさん", "5：Eさん",
-				"6：", "7：", "8：", "9：", "10：",
+				"6：Fさん", "7：Gさん", "8：", "9：", "10：",
 				"11：", "12：", "13：", "14：", };
 		int months = 0;
 		int year = 0;
