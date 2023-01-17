@@ -18,6 +18,9 @@ public class Toban {
 		int months = 0;
 		int year = 0;
 		final int GROUP = 4;
+		String team = new String[GROUP];
+		int er = 0;
+		int er2 = 0;
 		
 
 		GregorianCalendar gcalendar = new GregorianCalendar();
@@ -33,9 +36,28 @@ public class Toban {
 		System.out.print(gcalendar.get(Calendar.MINUTE) + ":");
 		System.out.println(gcalendar.get(Calendar.SECOND));
 		
-		for(int i = 0; i < student.length; i++) {
-			
+		for(int i = 0; i < GROUP; i++) {
+			team[i] = student[i];
 		}
+		
+		System.out.println("今日の当番は" + Arrays.toString(team));
+		
+		for(int i = 0; i < student.length; i++) {
+
+			try{student[i] = student[i+GROUP];
+			}catch(IndexOutOfBoundsException e) {
+				er = i
+				for(i = i; i < student.length; i++)
+					er2 = i;
+					student[i] = student[er2 - er];		
+			}
+		}
+		
+		for(int i = 0; i < GROUP; i++) {
+			team[i] = student[i];
+		}
+		
+		System.out.println("来週の当番は" + Arrays.toString(team));
 
 	}
 
